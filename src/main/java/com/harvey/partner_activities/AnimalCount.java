@@ -50,16 +50,17 @@ public class AnimalCount {
 
 
         for (Map.Entry entry: owners_and_their_pets.entrySet()) {
-            String person = entry.getKey().toString();
+            Person person = (Person) entry.getKey();
             List<Animal> animals = (List<Animal>) entry.getValue();
             String animals2 = animals.stream().map(Object::toString).collect(Collectors.joining(","));
+            String person2 = person.getFirstName();
             int count = animals.size();
             if (count == 0) {
-                System.out.println(person + "has no pets.");
+                System.out.println(person2 + "has no pets.");
             } else if (count == 1) {
-                System.out.println(person + "'s pet: " + animals2);
+                System.out.println(person2 + "'s pet: " + animals2);
             } else {
-                System.out.println(person + "'s pets: " + animals2);
+                System.out.println(person2 + "'s pets: " + animals2);
             }
         }
         System.out.println();
