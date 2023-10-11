@@ -1,4 +1,4 @@
-package com.harvey.day2;
+package com.harvey.demo.day2;
 
 import java.text.NumberFormat;
 import java.time.LocalDate;

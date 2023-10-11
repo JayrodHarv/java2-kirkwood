@@ -1,4 +1,4 @@
-package com.harvey.day2;
+package com.harvey.demo.day2;
 
 public class Person {
     private String name;

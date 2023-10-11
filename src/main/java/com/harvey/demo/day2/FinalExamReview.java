@@ -1,4 +1,4 @@
-package com.harvey.day2;
+package com.harvey.demo.day2;
 
 public class FinalExamReview {
     public static void main(String[] args) {
