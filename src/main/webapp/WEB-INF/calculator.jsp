@@ -1,14 +1,13 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: jared
-  Date: 10/18/2023
-  Time: 1:44 PM
-  To change this template use File | Settings | File Templates.
---%>
+<%@ page import="java.util.Map" %>
+<%@ page import="java.util.HashMap" %>
+<%@ taglib prefix="c" uri="jakarta.tags.core" %>
 
 <%-- JSP comments will not appear in the browser --%>
 <!-- HTML comments will appear in the browser -->
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+
+<%-- Scriptlets contain java code --%>
+
 <html>
 <head>
     <title>Calculator</title>
@@ -23,14 +22,22 @@
                 <form method="POST" action="calculator">
                     <div class="form-group mb-2">
                         <label for="firstNumber">First Number:</label>
-                        <input name="num1" value="${results.num1}" type="text" class="form-control" id="firstNumber">
+                        <input name="num1" value="${results.get("num1")}" type="text" class="form-control" id="firstNumber">
                     </div>
                     <div class="form-group mb-2">
                         <label for="secondNumber">Second Number:</label>
-                        <input name="num2" value="${results.num2}" type="text" class="form-control" id="secondNumber">
+                        <input name="num2" value="${results.get("num2")}" type="text" class="form-control" id="secondNumber">
                     </div>
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </form>
+<%--                Java Expressions are single line statements of Java embeded within jsp --%>
+
+                <c:if test="${results.containsKey('sum')}">
+                    <p><c:out value="${results.sum}" /></p>
+                </c:if>
+                <c:if test="${results.containsKey('invalidNumber')}">
+                    <p><c:out value="${results.invalidNumber}" /></p>
+                </c:if>
             </div>
         </div>
     </div>
