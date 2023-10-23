@@ -56,4 +56,31 @@ public class Fraction {
         }
         return simplifiedFraction;
     }
+
+    public String mixedNumber(Fraction fraction) {
+        Fraction simplified = fraction.simplify();
+        if(simplified.denominator == 1) {
+            return Integer.toString(simplified.numerator);
+        } else if(simplified.denominator == 0) {
+            return "0";
+        } else if(simplified.numerator > simplified.denominator) {
+            String mixedNum;
+            int wholeNum;
+            wholeNum = Math.floorDiv(simplified.numerator,simplified.denominator);
+            mixedNum = wholeNum + " " + (simplified.numerator - wholeNum*simplified.denominator) + "/" + simplified.denominator;
+            return mixedNum;
+        } else if(simplified.numerator < 0 && Math.abs(simplified.numerator) > simplified.denominator) {
+            String mixedNum;
+            int wholeNum;
+            int numerator = -simplified.numerator;
+            wholeNum = Math.floorDiv(numerator,simplified.denominator);
+            mixedNum = "-" + wholeNum + " " + (numerator - wholeNum*simplified.denominator) + "/" + simplified.denominator;
+            return mixedNum;
+        }
+
+        return simplified.toString();
+
+
+
+    }
 }

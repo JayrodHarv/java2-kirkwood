@@ -97,4 +97,37 @@ class FractionTest {
         assertEquals(simplifiedFraction6.getNumerator(), 1);
         assertTrue(simplifiedFraction6.getDenominator() == 2);
     }
+
+    @Test
+    public void mixedNumber() {
+        Fraction fraction = new Fraction(4, 1);
+        assertEquals("4", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(0, 4);
+        assertEquals("0", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(4, 4);
+        assertEquals("1", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(8, 4);
+        assertEquals("2", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(4, 8);
+        assertEquals("1/2", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(13, 5);
+        assertEquals("2 3/5", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(-13, 5);
+        assertEquals("-2 3/5", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(13, -5);
+        assertEquals("-2 3/5", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(-13, -5);
+        assertEquals("2 3/5", fraction.mixedNumber(fraction));
+
+        fraction = new Fraction(-4, -5);
+        assertEquals("4/5", fraction.mixedNumber(fraction));
+    }
 }
