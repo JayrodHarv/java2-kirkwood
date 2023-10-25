@@ -32,10 +32,10 @@
                 </form>
 <%--                Java Expressions are single line statements of Java embeded within jsp --%>
 
-                <c:if test="${results.containsKey('sum')}">
+                <c:if test="${results.sum != ''}">
                     <p><c:out value="${results.sum}" /></p>
                 </c:if>
-                <c:if test="${results.containsKey('invalidNumber')}">
+                <c:if test="${results.invalidNumber != ''}">
                     <p><c:out value="${results.invalidNumber}" /></p>
                 </c:if>
             </div>

@@ -1,4 +1,4 @@
-package com.harvey;
+package com.harvey.demo.day20;
 
 import com.harvey.project.utils.Helpers;
 import jakarta.servlet.ServletException;
@@ -18,7 +18,7 @@ public class CalculatorServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        req.getRequestDispatcher("WEB-INF/calculator.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/day20/calculator.jsp").forward(req, resp);
     }
 
     @Override
@@ -30,7 +30,7 @@ public class CalculatorServlet extends HttpServlet {
         results.put("num1", num1);
         results.put("num2", num2);
         req.setAttribute("results", results);
-        req.getRequestDispatcher("WEB-INF/calculator.jsp").forward(req, resp);
+        req.getRequestDispatcher("WEB-INF/day20/calculator.jsp").forward(req, resp);
 
     }
 
