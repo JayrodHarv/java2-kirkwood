@@ -38,7 +38,7 @@ public class TempConverter extends HttpServlet {
             results.put("conversionError", "Select a conversion type");
         }
         if(!Helpers.isANumber(temperature)) {
-            results.put("temperatureError", "Please imput a valid temperature");
+            results.put("temperatureError", "Please input a valid temperature");
         }
         if(!results.containsKey("conversionError") && !results.containsKey("temperatureError")) {
             double tempDouble = Double.parseDouble(temperature);
