@@ -31,7 +31,6 @@ public class CalculatorServlet extends HttpServlet {
         results.put("num2", num2);
         req.setAttribute("results", results);
         req.getRequestDispatcher("WEB-INF/day20/calculator.jsp").forward(req, resp);
-
     }
 
     public void add(String num1, String num2) {
