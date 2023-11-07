@@ -21,13 +21,26 @@
                         Sort
                     </a>
                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <li><a class="dropdown-item" href="#">A-Z</a></li>
-                        <li><a class="dropdown-item" href="#">Z-A</a></li>
+                        <li><a class="dropdown-item" href="user-json?sort=az&q=${q}&state=${state}">A-Z</a></li>
+                        <li><a class="dropdown-item" href="user-json?sort=za&q=${q}&state=${state}">Z-A</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        Filter by State
+                    </a>
+                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown2">
+                        <li><a class="dropdown-item" href="user-json?sort=${s}&q=${q}">All</a></li>
+                        <c:forEach items="${states}" var="state">
+                            <li><a class="dropdown-item" href="user-json?sort=${s}&q=${q}&state=${state}">${state}</a></li>
+                        </c:forEach>
                     </ul>
                 </li>
             </ul>
             <form class="d-flex" action="user-json" method="GET">
                 <input name="q" value="${q}" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input name="sort" value="${s}" type="hidden">
+                <input name="state" value="${state}" type="hidden">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
@@ -50,6 +63,28 @@
                 </div>
             </div>
         </c:forEach>
+    </div>
+    <div class="row">
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">First</th>
+                <th scope="col">Last</th>
+                <th scope="col">Location</th>
+            </tr>
+            </thead>
+            <tbody>
+            <c:forEach items="${users}" var="user" varStatus="count">
+                <tr>
+                    <th scope="row">${count.count}</th>
+                    <td>${user.name.first}</td>
+                    <td>${user.name.last}</td>
+                    <td>${user.location.city}, ${user.location.state}</td>
+                </tr>
+            </c:forEach>
+            </tbody>
+        </table>
     </div>
 </div>
 
