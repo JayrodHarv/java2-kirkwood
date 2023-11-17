@@ -5,8 +5,14 @@
   <title>JSP - Hello World</title>
 </head>
 <body>
-<h1><%= "Hello World!" %></h1>
+<h1>Table of Contents</h1>
 <br/>
-<a href="hello-servlet">Hello Servlet</a>
+<a href="calculator">Adder Calculator</a>
+<br/>
+<a href="convert-temp">Temperature Converter</a>
+<br/>
+<a href="user-json">User Json</a>
+<br/>
+<a href="typing-test-json">Quote Directory</a>
 </body>
 </html>
