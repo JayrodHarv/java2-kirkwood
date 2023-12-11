@@ -78,5 +78,16 @@ public class AnimalCount {
             }
         }
         counter.forEach((animal, count) -> System.out.println((count > 1) ? "There are " + count + " " + animal + "s" : "There is " + count + " " + animal));
+
+        Map<Integer, Integer> c = new HashMap<>();
+        for(Map.Entry entry: owners_and_their_pets.entrySet()) {
+            List<Animal> animals = (List<Animal>) entry.getValue();
+            if (!c.containsKey(animals.size()) && animals.size() != 0) {
+                c.put(animals.size(), 1);
+            } else {
+                c.put(animals.size(), animals.size() + 1);
+            }
+        }
+        c.forEach((numberOfPeople, count) -> System.out.println((numberOfPeople > 1) ? numberOfPeople + " people have " + count + " pets." : numberOfPeople + " person has" + count + " pet."));
     }
 }
