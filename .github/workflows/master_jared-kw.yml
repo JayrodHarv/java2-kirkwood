@@ -28,7 +28,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: java-app
-          path: '${{ github.workspace }}/target/*.war'
+          path: '${{ github.workspace }}/target/java2-kirkwood-1.0-SNAPSHOT.war'
 
   deploy:
     runs-on: ubuntu-latest
@@ -49,5 +49,5 @@ jobs:
         with:
           app-name: 'jared-kw'
           slot-name: 'Production'
-          package: '*.war'
+          package: 'java2-kirkwood-1.0-SNAPSHOT.war'
           publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_B40EC9E3FC8B42F085FCC8902D4A235F }}

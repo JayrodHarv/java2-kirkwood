@@ -56,7 +56,7 @@ public class AnimalCount {
             String person2 = person.getFirstName();
             int count = animals.size();
             if (count == 0) {
-                System.out.println(person2 + "has no pets.");
+                System.out.println(person2 + " has no pets.");
             } else if (count == 1) {
                 System.out.println(person2 + "'s pet: " + animals2);
             } else {

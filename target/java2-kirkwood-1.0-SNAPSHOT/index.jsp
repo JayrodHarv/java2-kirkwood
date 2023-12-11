@@ -14,5 +14,13 @@
 <a href="user-json">User Json</a>
 <br/>
 <a href="typing-test-json">Quote Directory</a>
+<br/>
+<a href="signup">Sign up</a>
+<br/>
+<a href="login">Login</a>
+<br/>
+<a href="logout">Logout</a>
+<br/>
+<a href="quote-db">Quote DB</a>
 </body>
 </html>
